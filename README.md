@@ -1,2 +1,1 @@
-# OpenCvSharp4-Study
-OpenCvSharp4 C# 기본기
+# Defect Detector
