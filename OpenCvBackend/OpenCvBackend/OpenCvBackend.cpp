@@ -194,8 +194,8 @@ void ProcessImageNative(
                 try {
                     cv::dnn::Net temp_net = cv::dnn::readNetFromONNX("C:\\Users\\ysjang\\Desktop\\asd\\C#\\OpenCv\\bin\\Release\\model.onnx");
                     
-                    temp_net.setPreferableBackend(cv::dnn::DNN_BACKEND_OPENCV);
-                    temp_net.setPreferableTarget(cv::dnn::DNN_TARGET_CPU);
+                    temp_net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
+                    temp_net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
 
                     p_ai_net = new cv::dnn::Net(temp_net);
                 }

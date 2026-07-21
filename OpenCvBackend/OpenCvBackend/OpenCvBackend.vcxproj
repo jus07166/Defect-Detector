@@ -118,8 +118,8 @@
       <AdditionalIncludeDirectories>C:\OpenCV_Build\build\install\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>opencv_core453.lib;opencv_imgproc453.lib;opencv_imgcodecs453.lib;opencv_dnn453.lib;opencv_stitching453.lib;opencv_cudaimgproc453.lib;opencv_cudawarping453.lib;opencv_cudaarithm453.lib</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\OpenCV_Build\build\install\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opencv_core4100.lib;opencv_imgproc4100.lib;opencv_imgcodecs4100.lib;opencv_dnn4100.lib;opencv_stitching4100.lib;opencv_cudaimgproc4100.lib;opencv_cudawarping4100.lib;opencv_cudaarithm4100.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\OpenCV_Build\build\install\x64\vc17\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
