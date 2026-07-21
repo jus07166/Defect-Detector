@@ -179,40 +179,18 @@ void ProcessImageNative(
             // 1. 모델 로드 (최초 1회)
             if (p_ai_net == nullptr)
             {
-				/////// cuda 장치 인식 여부 확인 //////
-                int cuda_count = cv::cuda::getCudaEnabledDeviceCount();
-                if (cuda_count < 1) {
-                    MessageBoxA(NULL, "CUDA 장치를 찾지 못했습니다! (DLL 인식 실패)", "경고", MB_OK);
-                }
-                else {
-                    char msg[100];
-                    sprintf_s(msg, "CUDA 장치 %d개 인식 성공!", cuda_count);
-                    MessageBoxA(NULL, msg, "확인", MB_OK);
-                }
-                ///////////////////////////////////////
-
-                try {
-                    cv::dnn::Net temp_net = cv::dnn::readNetFromONNX("C:\\Users\\ysjang\\Desktop\\asd\\C#\\OpenCv\\bin\\Release\\model.onnx");
+                try 
+                {
+                    cv::dnn::Net temp_net = cv::dnn::readNetFromONNX("model.onnx");
                     
                     temp_net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
                     temp_net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
 
                     p_ai_net = new cv::dnn::Net(temp_net);
                 }
-                //catch (...) {
-                //    MessageBoxA(NULL, "Model Load Error", "에러", MB_OK);
-                //    return;
-
-                catch (const cv::Exception& e) {
-                    MessageBoxA(NULL, e.what(), "OpenCV DNN 에러", MB_OK);
-                    return;
-                }
-                catch (const std::exception& e) {
-                    MessageBoxA(NULL, e.what(), "C++ 표준 에러", MB_OK);
-                    return;
-                }
-                catch (...) {
-                    MessageBoxA(NULL, "알 수 없는 에러", "에러", MB_OK);
+                catch (...)
+                {
+                    MessageBoxA(NULL, "Model Load Error", "에러", MB_OK);
                     return;
                 }
             }

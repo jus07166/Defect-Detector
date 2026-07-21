@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\ysjang\Desktop\asd\C#\OpenCv\x64\Release\OpenCvBackend.dll</FullPath>
+      <FullPath>C:\Users\ysjang\Desktop\asd\C#\OpenCv\bin\Release\OpenCvBackend.dll</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
