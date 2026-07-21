@@ -2,4 +2,23 @@
 # 이 .gitignore 파일은 Microsoft(R) Visual Studio에서 자동으로 만들어졌습니다.
 ################################################################################
 
-/.vs
+# 패키지 및 대용량 파일
+packages/
+*.nupkg
+Test_Image/
+*.zip
+*.db
+
+# 2. Visual Studio 로컬 설정 (개인 PC 설정이므로 공유 불필요)
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# 3. C# / .NET 빌드 결과물 (빌드하면 다시 생성되므로 용량만 차지함)
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
