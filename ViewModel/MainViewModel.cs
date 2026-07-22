@@ -228,6 +228,7 @@ namespace OpenCvStudy.ViewModel
             _originalImage = null;
             _resultImage = null;
             DefectList.Clear();
+            _currentImagePath = null;
         }
 
         //XAML 마우스 클릭 이벤트에서 호출될 토글 메서드
