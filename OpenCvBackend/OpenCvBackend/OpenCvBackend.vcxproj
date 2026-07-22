@@ -74,6 +74,11 @@
     <Import Project="OpenCV4100.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+  </ItemDefinitionGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>C:\Users\ysjang\Desktop\asd\C#\OpenCv\bin\Release\</OutDir>
     <TargetName>OpenCvBackend</TargetName>
@@ -127,6 +132,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HeatmapTensor.h" />
     <ClInclude Include="OpenCvBackend.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />

@@ -6,6 +6,7 @@
 packages/
 *.nupkg
 Test_Image/
+Sample_Data/
 *.zip
 *.db
 
