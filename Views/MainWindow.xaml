@@ -111,14 +111,14 @@
                     <RadioButton Content="이물 검사"
                          FontSize="15"
                          Foreground="#E0E0E0" 
-                         IsChecked="{Binding IsRuleBasedMode}" 
+                         IsChecked="{Binding Settings.IsRuleBasedMode}"
                          GroupName="ModeGroup" 
                          Cursor="Hand" Margin="0, 50, 15, 0"/>
 
                     <RadioButton Content="알약 불량" 
                          FontSize="15"
                          Foreground="#E0E0E0" 
-                         IsChecked="{Binding IsDeepLearningMode}" 
+                         IsChecked="{Binding Settings.IsDeepLearningMode}"
                          GroupName="ModeGroup" 
                          Cursor="Hand" Margin="0, 50, 15, 0"/>
                 </StackPanel>
@@ -191,21 +191,21 @@
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <!-- IsDeepLearningMode가 False일 때만 표시 -->
-                            <DataTrigger Binding="{Binding IsDeepLearningMode}" Value="False">
+                            <DataTrigger Binding="{Binding Settings.IsDeepLearningMode}" Value="False">
                                 <Setter Property="Visibility" Value="Visible"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Style>
 
-                <TextBlock Text="{Binding MinDefectPixels, StringFormat='이물 픽셀 크기 (Min Defect Pixels) : {0}'}" FontSize="30"/>
-                <Slider Minimum="0" Maximum="100" Value="{Binding MinDefectPixels}" />
+                <TextBlock Text="{Binding Settings.MinDefectPixels, StringFormat='이물 픽셀 크기 (Min Defect Pixels) : {0}'}" FontSize="30"/>
+                <Slider Minimum="0" Maximum="100" Value="{Binding Settings.MinDefectPixels}" />
 
-                <TextBlock Text="{Binding ThresholdSensitivity, StringFormat='이물 민감도 (Threshold Sensitivity) : {0}'}" FontSize="30"/>
-                <Slider Minimum="0" Maximum="255" Value="{Binding ThresholdSensitivity}" />
+                <TextBlock Text="{Binding Settings.ThresholdSensitivity, StringFormat='이물 민감도 (Threshold Sensitivity) : {0}'}" FontSize="30"/>
+                <Slider Minimum="0" Maximum="255" Value="{Binding Settings.ThresholdSensitivity}" />
 
-                <TextBlock Text="{Binding MinShapeArea, StringFormat='이물 최소 면적 (Min Shape Area) : {0}'}" FontSize="30"/>
-                <Slider Minimum="0" Maximum="10000" Value="{Binding MinShapeArea}" />
+                <TextBlock Text="{Binding Settings.MinShapeArea, StringFormat='이물 최소 면적 (Min Shape Area) : {0}'}" FontSize="30"/>
+                <Slider Minimum="0" Maximum="10000" Value="{Binding Settings.MinShapeArea}" />
             </StackPanel>
 
             <!-- 2. 딥러닝 모드 전용 패널 -->
@@ -215,19 +215,19 @@
                         <Setter Property="Visibility" Value="Collapsed"/>
                         <Style.Triggers>
                             <!-- IsDeepLearningMode가 True일 때만 표시 -->
-                            <DataTrigger Binding="{Binding IsDeepLearningMode}" Value="True">
+                            <DataTrigger Binding="{Binding Settings.IsDeepLearningMode}" Value="True">
                                 <Setter Property="Visibility" Value="Visible"/>
                             </DataTrigger>
                         </Style.Triggers>
                     </Style>
                 </StackPanel.Style>
 
-                <TextBlock Text="{Binding AnomalyThreshold, StringFormat='불량 판정 기준점 (Anomaly Threshold) : {0:N1}'}" FontSize="30"  />
+                <TextBlock Text="{Binding Settings.AnomalyThreshold, StringFormat='불량 판정 기준점 (Anomaly Threshold) : {0:N1}'}" FontSize="30"  />
                 <!-- 0.1부터 5.0 사이 등 모델 결과에 맞게 범위 조절 -->
-                <Slider Minimum="0.1" Maximum="5.0" TickFrequency="0.1" IsSnapToTickEnabled="True" Value="{Binding AnomalyThreshold}" />
+                <Slider Minimum="0.1" Maximum="5.0" TickFrequency="0.1" IsSnapToTickEnabled="True" Value="{Binding Settings.AnomalyThreshold}" />
 
-                <TextBlock Text="{Binding MaxExpectedScore, StringFormat='시각화 최대 점수 (Max Expected Score) : {0:N1}'}" FontSize="30" Margin="0,10,0,0" />
-                <Slider Minimum="0.5" Maximum="10.0" TickFrequency="0.5" IsSnapToTickEnabled="True" Value="{Binding MaxExpectedScore}" />
+                <TextBlock Text="{Binding Settings.MaxExpectedScore, StringFormat='시각화 최대 점수 (Max Expected Score) : {0:N1}'}" FontSize="30" Margin="0,10,0,0" />
+                <Slider Minimum="0.5" Maximum="10.0" TickFrequency="0.5" IsSnapToTickEnabled="True" Value="{Binding Settings.MaxExpectedScore}" />
             </StackPanel>
         </Grid>
         <!--하단 패널-->

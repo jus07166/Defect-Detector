@@ -88,8 +88,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AsyncRelayCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Models\DefectItem.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="Models\InspectionMode.cs" />
+    <Compile Include="Models\InspectionOptions.cs" />
+    <Compile Include="Models\InspectionResult.cs" />
+    <Compile Include="Services\IApplicationLifetime.cs" />
+    <Compile Include="Services\IDialogService.cs" />
+    <Compile Include="Services\IImageSourceService.cs" />
+    <Compile Include="Services\IInspectionService.cs" />
+    <Compile Include="Services\NativeInspectionService.cs" />
+    <Compile Include="Services\WpfApplicationLifetime.cs" />
+    <Compile Include="Services\WpfDialogService.cs" />
+    <Compile Include="Services\WpfImageSourceService.cs" />
+    <Compile Include="ViewModels\InspectionSettingsViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ObservableObject.cs" />
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
