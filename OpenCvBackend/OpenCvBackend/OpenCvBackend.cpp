@@ -206,7 +206,7 @@ void ProcessImageNative(
             p_ai_net->setInput(blob);
             std::vector<cv::Mat> outputs;
 
-            // 모델 출력이 1개뿐이므로 그냥 forward를 부르면 됩니다.
+            // 모델 출력
             p_ai_net->forward(outputs);
 
             if (outputs.empty() || outputs[0].dims != 4) return;
